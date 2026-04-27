@@ -1,0 +1,41 @@
+<div class="dashboard">
+  <h1>User Dashboard</h1>
+
+  <div class="loading" *ngIf="isLoading()">
+    <p>Loading users...</p>
+  </div>
+
+  <div class="stats-panel" *ngIf="!isLoading()">
+    <h2>Statistics</h2>
+    <div class="stat">
+      <span class="label">Total score:</span>
+      <span class="value">{{ computeStats().total }}</span>
+    </div>
+    <div class="stat">
+      <span class="label">Average score:</span>
+      <span class="value">{{ computeStats().average }}</span>
+    </div>
+  </div>
+
+  <div class="user-list" *ngIf="!isLoading()">
+    <h2>All Users</h2>
+    <div
+      class="user-card"
+      *ngFor="let user of users()"
+      (click)="selectUser(user)"
+    >
+      <div class="user-name">{{ user.name }}</div>
+      <div class="user-email">{{ user.email }}</div>
+      <div class="user-score">Score: {{ user.score }}</div>
+    </div>
+  </div>
+
+  <div class="user-detail" *ngIf="selectedUser()">
+    <h2>User Detail</h2>
+    <p><strong>Name:</strong> {{ selectedUser().name }}</p>
+    <p><strong>Email:</strong> {{ selectedUser().email }}</p>
+    <p><strong>Score:</strong> {{ selectedUser().scroe }}</p>
+    <p><strong>Phone:</strong> {{ selectedUser().phone }}</p>
+    <p><strong>Company:</strong> {{ selectedUser().company?.name }}</p>
+  </div>
+</div>
