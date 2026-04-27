@@ -19,7 +19,7 @@ The application will be available at `http://localhost:4200`.
 
 ## The exercise
 
-1. Open the open pull request in this repository.
+1. Open the open pull request in this repository. [PR link](https://github.com/pierre-malaga-papernest/angular-code-review-exercise/pull/1/changes)
 2. Read through the changes introduced by the junior developer.
 3. Prepare to walk the interviewer through your findings.
 
